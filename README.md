@@ -1,2 +1,1 @@
-# weather-app
-Project No: 12 - Weather App
+# Project No: 12 - Weather App
