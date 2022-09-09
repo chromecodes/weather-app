@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&family=Quicksand:wght@400;500&family=Saira:ital,wght@1,300;1,400&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+
+body {
+  font-family: "quicksand", sans-serif;
+  font-weight: 500;
+  padding: 10px;
+  background-color: darkcyan;
+  color: white;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.searchbox {
+  height: 28px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 60px;
+  display: flex;
+  padding: 3px;
+}
+.search {
+  color: white;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  background: transparent;
+  border-radius: 60px;
+  padding-left: 15px;
+  font-weight: 600;
+}
+.searchbtn {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.searchbtn::after {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f002";
+  color: white;
+}
+.conversion {
+  display: flex;
+  gap: 20px;
+}
+.unit {
+  height: 28px;
+  width: 84px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
