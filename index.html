@@ -13,18 +13,27 @@
     <div class="header">
         <div> Weather </div>
         <div class="searchbox">
-            <input type="search" class="search">
+            <input type="search" class="search" value="tokyo">
             <button class="searchbtn"></button>
         </div>
         <div class="conversion">
-            <button class="unit C-deg">°C, km/h</button>
-            <button class="unit F-deg">°F, mph </button>
+            <input type="radio" id="C-deg" name="unit" checked>
+            <label for="C-deg" class="unit C-deg">°C, km/h</label>
+            <input type="radio" id="F-deg" name="unit">
+            <label for="F-deg" class="unit F-deg">°F, mph</label>
         </div>
     </div>
     <div class="main">
-
     </div>
-    <div class="footer"></div>
+    <footer class="footer" id="footer">
+        <span class="user">
+            The <a href="https://www.theodinproject.com/" class="odin">Odin</a> Project
+            <br>
+            <a href="https://github.com/chromecodes/weather-app"><i class="fa-solid fa-code"></i></a>
+            chromecodes
+            <a href="https://github.com/chromecodes"> <i class="fa-brands fa-github"></i> </a>
+        </span>
+    </footer>
 
 </body>
 
