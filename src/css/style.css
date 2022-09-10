@@ -3,16 +3,17 @@
 
 body {
   font-family: "quicksand", sans-serif;
-  font-weight: 500;
-  padding: 10px;
+  min-height: 100vh;
   background-color: darkcyan;
   color: white;
+  display: flex;
+  flex-direction: column;
 }
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 30px;
   font-size: 20px;
   font-weight: 600;
 }
@@ -31,7 +32,7 @@ body {
   background: transparent;
   border-radius: 60px;
   padding-left: 15px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .searchbtn {
   background: transparent;
@@ -53,8 +54,11 @@ body {
   gap: 20px;
 }
 .unit {
-  height: 28px;
-  width: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 94px;
   border-radius: 50px;
   font-size: 16px;
   font-weight: 600;
@@ -62,4 +66,56 @@ body {
   color: white;
   border: none;
   cursor: pointer;
+}
+input[type="radio"] {
+  display: none;
+}
+input[type="radio"]:checked + .unit {
+  background: transparent;
+}
+
+/******* MAIN SECTION *************/
+
+.main {
+  height: 100%;
+  flex-grow: 1;
+  padding: 20px;
+}
+/********** FOOTER SECTION ********/
+
+.footer {
+  border-top: 1px solid var(--terinary-bg-color);
+  color: var(--secondary-drgreen-accent);
+  padding: 10px 0px 4px 0px;
+  font-size: 16px;
+  text-align: center;
+}
+.odin {
+  color: var(--primary-drgreen-accent);
+}
+.fa-code {
+  font-size: 16px;
+  color: var(--secondary-red-accent);
+  transition: transform 0.5s ease-in-out;
+}
+
+.fa-github {
+  font-size: 18px;
+  color: var(--secondary-blue-accent);
+  transition: transform 0.5s ease-in-out;
+}
+
+.fa-code:hover {
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0) scale(1.1);
+}
+
+.fa-github:hover {
+  transform: rotate(720deg) scale(1.2);
+}
+
+.odin:hover {
+  transform: scale(1.2);
 }
