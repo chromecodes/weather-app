@@ -18,8 +18,8 @@ export const apiData = (()=>{
             const localOffset = new Date().getTimezoneOffset() * 60000
             const currentUtcTime = localOffset + localTime + 86400
             const cityOffset = currentUtcTime + 1000 * timezone
-            const cityTime = new Date(cityOffset)..toString().split(' ')
-            const cityTime2 = new Date(cityOffset)
+            const cityTime = new Date(cityOffset).toString().split(' ')
+            const cityTime2 = cityTime[4].split(':')
             const dateData = [cityTime, cityTime2]
             return dateData;
           }
