@@ -1,26 +1,5 @@
-
+import { apiData } from "./Data";
 export const createDom =(() => {
-
-    let icons = {
-        icon_01d : "https://img.icons8.com/sf-regular/96/FFFFFF/sun.png",
-        icon_01n : "https://img.icons8.com/external-flatart-icons-outline-flatarticons/96/FFFFFF/external-moon-basic-ui-elements-flatart-icons-outline-flatarticons.png",
-        icon_02d : "https://img.icons8.com/sf-regular/96/FFFFFF/partly-cloudy-day.png",
-        icon_02n : "https://img.icons8.com/sf-regular/96/FFFFFF/partly-cloudy-night.png",
-        icon_03d :  "https://img.icons8.com/sf-regular/96/FFFFFF/cloud.png",
-        icon_03n :  "https://img.icons8.com/sf-regular/96/FFFFFF/cloud.png",
-        icon_04d :  "https://img.icons8.com/sf-regular/96/FFFFFF/clouds.png",
-        icon_04n :  "https://img.icons8.com/sf-regular/96/FFFFFF/clouds.png",
-        icon_09d :  "https://img.icons8.com/sf-regular/96/FFFFFF/rain.png" ,
-        icon_09n :  "https://img.icons8.com/sf-regular/96/FFFFFF/rain.png",
-        icon_10d :   "https://img.icons8.com/ios/96/FFFFFF/rain--v1.png",
-        icon_10n :   "https://img.icons8.com/ios/96/FFFFFF/rain--v1.png",
-        icon_11d :  "https://img.icons8.com/sf-regular/96/FFFFFF/storm.png" ,
-        icon_11n :  "https://img.icons8.com/sf-regular/96/FFFFFF/storm.png" ,
-        icon_13d :  "https://img.icons8.com/sf-regular/96/FFFFFF/snow.png",
-        icon_13n :  "https://img.icons8.com/sf-regular/96/FFFFFF/snow.png",
-        icon_50d :  "https://img.icons8.com/ios-glyphs/30/FFFFFF/foggy-night-1.png",
-        icon_50n :  "https://img.icons8.com/ios-glyphs/30/FFFFFF/foggy-night-1.png",
-    }
 
     const crutWthr = (data)=>{         
 
@@ -56,9 +35,7 @@ export const createDom =(() => {
 
                 const cityWthrIcon = document.createElement('img');
                 cityWthrIcon.setAttribute('class','city-wthr-icon');
-                cityWthrIcon.setAttribute('src',`${icons.icon_data[1].weather[0].icon}`);
-
-                cityWthrIcon.textContent = "04d";
+                cityWthrIcon.setAttribute('src',`${apiData.icons[`icon_${data[1].weather[0].icon}`]}`);
 
             leftCntr.appendChild(cityWthrIcon);
 
@@ -74,7 +51,51 @@ export const createDom =(() => {
 
             leftCntr.appendChild(cityWthrStus);
 
-        main.appendChild(leftCntr)
+        main.appendChild(leftCntr);
+
+
+        const rightCntr = document.createElement('div');
+        rightCntr.setAttribute('class','right-cntr');
+
+            const wind = document.createElement('div');
+            wind.setAttribute('class','wind-speed');
+            wind.textContent = data[1].wind.speed;
+
+        rightCntr.appendChild(wind);
+
+            const humidity = document.createElement('div');
+            humidity.setAttribute('class','humidity');
+            humidity.textContent =  data[1].main.humidity+' %'
+
+        rightCntr.appendChild(humidity);
+
+            const visibility = document.createElement('div');
+            visibility.setAttribute('class','visibility');
+            visibility.textContent =  data[1].visibility/1000+' km'
+
+        rightCntr.appendChild(visibility);
+
+            const cloudiness = document.createElement('div');
+            cloudiness.setAttribute('class','cloudiness');
+            cloudiness.textContent =  data[1].clouds.all+' %'
+
+        rightCntr.appendChild(cloudiness);
+
+            const sunrise = document.createElement('div');
+            sunrise.setAttribute('class','sunrise');
+            sunrise.textContent =  apiData.getTimeCovert(data[1].sys.sunrise)
+            console.log(data[1].sys.sunrise * 1000);
+        rightCntr.appendChild(sunrise);
+
+            const sunset = document.createElement('div');
+            sunset.setAttribute('class','sunset');
+            sunset.textContent =  data[1].sys.sunset
+
+        rightCntr.appendChild(sunset);
+
+
+    main.appendChild(rightCntr);
+
     }
 
    return { crutWthr }
