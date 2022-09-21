@@ -2,7 +2,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
 
 body {
-  font-family: "quicksand", sans-serif;
+  font-family: "Nunito", sans-serif;
   min-height: 100vh;
   background-color: darkcyan;
   color: white;
@@ -90,9 +90,114 @@ input[type="radio"]:checked + .unit {
 .left-cntr {
   grid-area: left;
 }
+.left-set1,
+.left-set2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.left-set1-sub,
+.left-set2-sub {
+  display: flex;
+  gap: 10px;
+}
+.city-name {
+  font-size: 41px;
+  font-weight: 800;
+}
+.city-dayDate {
+  font-size: 26px;
+}
+.city-time {
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.left-set2-sub {
+  justify-content: center;
+  align-items: flex-end;
+}
+.city-wthr-temp {
+  font-size: 48px;
+  font-weight: 600;
+}
+.city-wthr-stus,
+.city-wthr-feel,
+.city-wthr-air {
+  font-size: 28px;
+  font-weight: 500;
+}
 .right-cntr {
   grid-area: right;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-rows: min-content;
 }
+
+.right-cntr > div {
+  display: grid;
+  grid-template-columns: max-content;
+  grid-template-rows: min-content;
+  grid-template-areas:
+    "icon title"
+    "icon value";
+}
+.right-cntr > div > div:nth-child(1) {
+  grid-area: title;
+}
+.right-cntr > div > div:nth-child(2) {
+  grid-area: value;
+}
+.wind-speed::before {
+  grid-area: icon;
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f72e";
+  color: white;
+}
+.humidity::before {
+  grid-area: icon;
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f043";
+  color: white;
+}
+.visibility::before {
+  grid-area: icon;
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f06e";
+  color: white;
+}
+.cloudiness::before {
+  grid-area: icon;
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-regular);
+  content: "\f0c2";
+  color: white;
+}
+.sunrise::before {
+  grid-area: icon;
+  content: url("https://img.icons8.com/sf-regular/48/FFFFFF/sunrise.png");
+}
+.sunset::before {
+  grid-area: icon;
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f72e";
+  color: white;
+}
+
 .bottom-cntr {
   grid-area: bottom;
 }
