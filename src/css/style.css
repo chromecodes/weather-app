@@ -102,14 +102,14 @@ input[type="radio"]:checked + .unit {
   gap: 10px;
 }
 .city-name {
-  font-size: 41px;
+  font-size: 34px;
   font-weight: 800;
 }
 .city-dayDate {
-  font-size: 26px;
+  font-size: 20px;
 }
 .city-time {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 500;
 }
 
@@ -118,88 +118,85 @@ input[type="radio"]:checked + .unit {
   align-items: flex-end;
 }
 .city-wthr-temp {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 600;
 }
 .city-wthr-stus,
 .city-wthr-feel,
 .city-wthr-air {
-  font-size: 28px;
+  font-size: 22px;
   font-weight: 500;
 }
 .right-cntr {
   grid-area: right;
   display: grid;
   grid-template-columns: repeat(2, max-content);
-  grid-template-rows: min-content;
+  grid-auto-rows: max-content;
 }
 
 .right-cntr > div {
-  display: grid;
-  grid-template-columns: max-content;
-  grid-template-rows: min-content;
-  grid-template-areas:
-    "icon title"
-    "icon value";
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 22px;
+  gap: 10px;
 }
-.right-cntr > div > div:nth-child(1) {
-  grid-area: title;
+.right-cntr > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.right-cntr > div > div:nth-child(2) {
-  grid-area: value;
+.right-cntr > div > div > div:nth-child(1) {
+  font-size: 16px;
+}
+.right-cntr > div > div > div:nth-child(2) {
+  font-size: 20px;
 }
 .wind-speed::before {
-  grid-area: icon;
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font: var(--fa-font-solid);
-  content: "\f72e";
-  color: white;
+  content: url("https://img.icons8.com/sf-regular/42/FFFFFF/wind.png");
 }
 .humidity::before {
-  grid-area: icon;
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font: var(--fa-font-solid);
-  content: "\f043";
-  color: white;
+  content: url("https://img.icons8.com/sf-regular/42/FFFFFF/wet.png");
 }
 .visibility::before {
-  grid-area: icon;
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font: var(--fa-font-solid);
-  content: "\f06e";
-  color: white;
+  content: url("https://img.icons8.com/sf-ultralight/42/FFFFFF/visible.png");
 }
 .cloudiness::before {
-  grid-area: icon;
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font: var(--fa-font-regular);
-  content: "\f0c2";
-  color: white;
+  content: url("https://img.icons8.com/sf-regular/42/FFFFFF/clouds.png");
 }
 .sunrise::before {
-  grid-area: icon;
-  content: url("https://img.icons8.com/sf-regular/48/FFFFFF/sunrise.png");
+  content: url("https://img.icons8.com/sf-regular/42/FFFFFF/sunrise.png");
 }
 .sunset::before {
-  grid-area: icon;
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font: var(--fa-font-solid);
-  content: "\f72e";
-  color: white;
+  content: url("https://img.icons8.com/sf-regular/42/FFFFFF/sunset.png");
 }
 
 .bottom-cntr {
   grid-area: bottom;
+}
+.card-cntr {
+  width: 150px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+.card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+}
+.card-mid {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 24px;
+}
+.card-botm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
 }
 .aa::after {
   display: inline-block;
@@ -209,9 +206,7 @@ input[type="radio"]:checked + .unit {
   content: "\f744";
   color: white;
 }
-.city-wthr-icon {
-  size-adjust: 64px;
-}
+
 /********** FOOTER SECTION ********/
 
 .footer {
@@ -222,17 +217,21 @@ input[type="radio"]:checked + .unit {
   text-align: center;
 }
 .odin {
-  color: var(--primary-drgreen-accent);
+  /* color: var(--primary-drgreen-accent); */
+  text-decoration: none;
+  color: white;
 }
 .fa-code {
   font-size: 16px;
-  color: var(--secondary-red-accent);
+  color: white;
+  /* color: var(--secondary-red-accent); */
   transition: transform 0.5s ease-in-out;
 }
 
 .fa-github {
   font-size: 18px;
-  color: var(--secondary-blue-accent);
+  /* color: var(--secondary-blue-accent); */
+  color: white;
   transition: transform 0.5s ease-in-out;
 }
 
