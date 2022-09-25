@@ -226,63 +226,77 @@ export const createDom =(() => {
             
             const bottomCntr =  document.createElement('div');
             bottomCntr.setAttribute('class','bottom-cntr');
-                        
-                const cardCntr = document.createElement('div');
-                cardCntr.setAttribute('class','card-cntr');
 
-                    const topSec = document.createElement('div');
-                    topSec.setAttribute('class','card-top');
+                const forcastCntr = document.createElement('div');
+                forcastCntr.setAttribute('class','forcast-cntr');
+                forcastCntr.textContent = 'Forcast';
 
-                        const cardDate = document.createElement('div');
-                        cardDate.setAttribute('class','card-date');
-                        cardDate.textContent =  apiData.getDate(data[2].list[7].dt)
-        
-                    topSec.appendChild(cardDate);
+            bottomCntr.appendChild(forcastCntr);
+                   
+            const cardsCntr = document.createElement('div');
+            cardsCntr.setAttribute('class','cards-cntr');
 
-                        const cardDay = document.createElement('div');
-                        cardDay.setAttribute('class','card-day');
-                        cardDay.textContent = apiData.getDay(data[2].list[7].dt)
+                for( let i = 8; i < 40; i+= 8) {
 
-                    topSec.appendChild(cardDay);
-
-                cardCntr.appendChild(topSec);
-
-
-                    const midSec = document.createElement('div');
-                    midSec.setAttribute('class','card-mid');
-
-                        const cardWthr = document.createElement('img');
-                        cardWthr.setAttribute('class','city-wthr');
-                        cardWthr.setAttribute('src',`${apiData.icons[`icon_${data[2].list[7].weather[0].icon}`]}`);
-
-                    midSec.appendChild(cardWthr);
-
-                        const cardTemp = document.createElement('div');
-                        cardTemp.setAttribute('class','card-temp');
-                        if(data[3]==="imperial") {
-                            cardTemp.textContent = Math.round(data[2].list[7].main.temp)+" °F";
-                        } else {
-                            cardTemp.textContent =  Math.round(data[2].list[7].main.temp)+" °C";
-                        }  
-
-                    midSec.appendChild(cardTemp);
-
-                cardCntr.appendChild(midSec);
-
-           
-                    const botmSec = document.createElement('div');
-                    botmSec.setAttribute('class','card-botm');
-
-                        const cardDesp = document.createElement('div');
-                        cardDesp.setAttribute('class','card-desp');
-                        cardDesp.textContent = apiData.intialCapitlize(data[2].list[7].weather[0].description)
-
-                    botmSec.appendChild(cardDesp);
-
-                cardCntr.appendChild(botmSec);
-                
-            bottomCntr.appendChild(cardCntr);
+                    const cardCntr = document.createElement('div');
+                    cardCntr.setAttribute('class','card-cntr');
+    
+                        const topSec = document.createElement('div');
+                        topSec.setAttribute('class','card-top');
+    
+                            const cardDate = document.createElement('div');
+                            cardDate.setAttribute('class','card-date');
+                            cardDate.textContent =  apiData.getDate(data[2].list[i].dt);
             
+                        topSec.appendChild(cardDate);
+    
+                            const cardDay = document.createElement('div');
+                            cardDay.setAttribute('class','card-day');
+                            cardDay.textContent = apiData.getDay(data[2].list[i].dt)
+    
+                        topSec.appendChild(cardDay);
+    
+                    cardCntr.appendChild(topSec);
+    
+    
+                        const midSec = document.createElement('div');
+                        midSec.setAttribute('class','card-mid');
+    
+                            const cardWthr = document.createElement('img');
+                            cardWthr.setAttribute('class','city-wthr');
+                            cardWthr.setAttribute('src',`${apiData.icons[`icon_${data[2].list[i].weather[0].icon}`]}`);
+    
+                        midSec.appendChild(cardWthr);
+    
+                            const cardTemp = document.createElement('div');
+                            cardTemp.setAttribute('class','card-temp');
+                            if(data[3]==="imperial") {
+                                cardTemp.textContent = Math.round(data[2].list[i].main.temp)+" °F";
+                            } else {
+                                cardTemp.textContent =  Math.round(data[2].list[i].main.temp)+" °C";
+                            }  
+    
+                        midSec.appendChild(cardTemp);
+    
+                    cardCntr.appendChild(midSec);
+    
+               
+                        const botmSec = document.createElement('div');
+                        botmSec.setAttribute('class','card-botm');
+    
+                            const cardDesp = document.createElement('div');
+                            cardDesp.setAttribute('class','card-desp');
+                            cardDesp.textContent = apiData.intialCapitlize(data[2].list[i].weather[0].description)
+    
+                        botmSec.appendChild(cardDesp);
+    
+                    cardCntr.appendChild(botmSec);
+
+                cardsCntr.appendChild(cardCntr);                    
+                }
+                
+            bottomCntr.appendChild(cardsCntr);
+
         main.appendChild(bottomCntr);
 
 
