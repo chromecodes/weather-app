@@ -14,12 +14,26 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 30px;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 600;
 }
+.title {
+  margin-left: 10px;
+  font-size: 24px;
+}
+.title::before {
+  display: inline-block;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font: var(--fa-font-solid);
+  content: "\f6c4";
+  color: white;
+}
 .searchbox {
+  margin-left: 55px;
   height: 28px;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7) inset;
   border-radius: 60px;
   display: flex;
   padding: 3px;
@@ -62,8 +76,9 @@ body {
   border-radius: 50px;
   font-size: 16px;
   font-weight: 600;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.7) inset;
+  color: rgb(255, 255, 255, 0.8);
   border: none;
   cursor: pointer;
 }
@@ -72,17 +87,39 @@ input[type="radio"] {
 }
 input[type="radio"]:checked + .unit {
   background: transparent;
+  box-shadow: none;
+  color: rgb(255, 255, 255);
 }
 
 /******* MAIN SECTION *************/
-
-.main {
+.main-cnt {
   height: 100%;
   flex-grow: 1;
   padding: 20px;
+}
+.error-cntr {
+  display: flex;
+  justify-content: center;
+}
+.error-text {
+  background: white;
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 7px 16px;
+  border-radius: 50px;
+  box-shadow: 0 0 10px 0 rgb(255, 255, 255, 0.8);
+}
+.load-cntr {
+  margin-top: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main {
   display: grid;
-  grid-template-columns: 35% 30% 35%;
-  grid-template-rows: 60% 40%;
+  grid-template-columns: 25% 50% 25%;
+  grid-template-rows: 55% 45%;
   grid-template-areas:
     "left cent right"
     "bottom bottom bottom";
@@ -95,6 +132,9 @@ input[type="radio"]:checked + .unit {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+}
+.left-set2 {
+  gap: 3px;
 }
 .left-set1-sub,
 .left-set2-sub {
@@ -132,8 +172,34 @@ input[type="radio"]:checked + .unit {
   display: grid;
   grid-template-columns: repeat(2, max-content);
   grid-auto-rows: max-content;
+  grid-template-areas:
+    "FRA FRB"
+    "SRA SRB"
+    "TRA TRB"
+    "PRA PRB"
+    "LRA LRB";
+  grid-gap: 20px;
+  justify-content: end;
+  padding-right: 25px;
 }
-
+.wind-speed {
+  grid-area: FRB;
+}
+.humidity {
+  grid-area: SRB;
+}
+.visibility {
+  grid-area: TRB;
+}
+.cloudiness {
+  grid-area: PRB;
+}
+.sunrise {
+  grid-area: LRA;
+}
+.sunset {
+  grid-area: LRB;
+}
 .right-cntr > div {
   display: flex;
   align-items: center;
@@ -151,6 +217,7 @@ input[type="radio"]:checked + .unit {
 }
 .right-cntr > div > div > div:nth-child(2) {
   font-size: 20px;
+  font-weight: 600;
 }
 .wind-speed::before {
   content: url("https://img.icons8.com/sf-regular/42/FFFFFF/wind.png");
@@ -173,14 +240,23 @@ input[type="radio"]:checked + .unit {
 
 .bottom-cntr {
   grid-area: bottom;
+  padding: 0 15px 15px 15px;
+}
+.forcast-cntr {
+  font-size: 36px;
+  font-weight: 600;
+  padding-bottom: 25px;
+  padding-left: 70px;
 }
 .cards-cntr {
   display: flex;
+  justify-content: space-evenly;
 }
 .card-cntr {
   width: 150px;
   padding: 15px;
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7);
   border-radius: 5px;
 }
 .card-top {
@@ -194,6 +270,7 @@ input[type="radio"]:checked + .unit {
   align-items: center;
   justify-content: space-around;
   font-size: 24px;
+  padding: 7px 0 7px 0;
 }
 .card-botm {
   display: flex;
