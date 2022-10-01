@@ -23,10 +23,8 @@ module.exports = {
                 type: 'asset/resource',
                 generator: {
                   filename: 'assets/[name][ext]',
-     
                 }
             }
         ]
-        
     }
 }
