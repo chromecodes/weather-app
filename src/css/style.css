@@ -1,13 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&family=Quicksand:wght@400;500&family=Saira:ital,wght@1,300;1,400&display=swap");
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
-
+:root {
+  --primary-clr: #ffffff;
+  --primary-bg-clr: linear-gradient(
+    to bottom,
+    rgb(66, 171, 219) 0%,
+    rgb(0, 184, 165) 100%
+  );
+}
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
-  background-color: darkcyan;
-  color: white;
+  background: var(--primary-bg-clr);
+  color: var(--primary-clr);
   display: flex;
   flex-direction: column;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 .header {
   display: flex;
@@ -27,19 +35,18 @@ body {
   -webkit-font-smoothing: antialiased;
   font: var(--fa-font-solid);
   content: "\f6c4";
-  color: white;
 }
 .searchbox {
   margin-left: 55px;
   height: 28px;
   background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.7) inset;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.9) inset;
   border-radius: 60px;
   display: flex;
   padding: 3px;
 }
 .search {
-  color: white;
+  color: var(--primary-clr);
   font-size: 18px;
   outline: none;
   border: none;
@@ -56,12 +63,12 @@ body {
 }
 
 .searchbtn::after {
+  color: var(--primary-clr);
   display: inline-block;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   font: var(--fa-font-solid);
   content: "\f002";
-  color: white;
 }
 .conversion {
   display: flex;
@@ -88,7 +95,6 @@ input[type="radio"] {
 input[type="radio"]:checked + .unit {
   background: transparent;
   box-shadow: none;
-  color: rgb(255, 255, 255);
 }
 
 /******* MAIN SECTION *************/
@@ -102,6 +108,7 @@ input[type="radio"]:checked + .unit {
   justify-content: center;
 }
 .error-text {
+  text-shadow: none;
   background: white;
   color: red;
   font-size: 20px;
@@ -278,14 +285,6 @@ input[type="radio"]:checked + .unit {
   justify-content: center;
   font-size: 18px;
 }
-.aa::after {
-  display: inline-block;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  font: var(--fa-font-solid);
-  content: "\f744";
-  color: white;
-}
 
 /********** FOOTER SECTION ********/
 
@@ -293,25 +292,22 @@ input[type="radio"]:checked + .unit {
   border-top: 1px solid var(--terinary-bg-color);
   color: var(--secondary-drgreen-accent);
   padding: 10px 0px 4px 0px;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
 }
 .odin {
-  /* color: var(--primary-drgreen-accent); */
   text-decoration: none;
-  color: white;
+  color: var(--primary-clr);
 }
 .fa-code {
-  font-size: 16px;
-  color: white;
-  /* color: var(--secondary-red-accent); */
+  font-size: 18px;
+  color: var(--primary-clr);
   transition: transform 0.5s ease-in-out;
 }
 
 .fa-github {
-  font-size: 18px;
-  /* color: var(--secondary-blue-accent); */
-  color: white;
+  font-size: 20px;
+  color: var(--primary-clr);
   transition: transform 0.5s ease-in-out;
 }
 
