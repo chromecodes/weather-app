@@ -330,7 +330,7 @@ export const createDom =(() => {
 
                 const loading = document.createElement('img');
                 loading.setAttribute('class','loading');
-                loading.setAttribute('src','../src/Gif/loading2.gif');
+                loading.setAttribute('src','Gif/loading2.gif');
 
             loadCnt.appendChild(loading);
 
