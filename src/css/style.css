@@ -24,6 +24,7 @@ body {
   padding: 30px;
   font-size: 28px;
   font-weight: 600;
+  width: 100%;
 }
 .title {
   margin-left: 10px;
@@ -99,7 +100,7 @@ input[type="radio"]:checked + .unit {
 
 /******* MAIN SECTION *************/
 .main-cnt {
-  height: 100%;
+  min-height: 100%;
   flex-grow: 1;
   padding: 20px;
 }
@@ -258,6 +259,8 @@ input[type="radio"]:checked + .unit {
 .cards-cntr {
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px;
 }
 .card-cntr {
   width: 150px;
@@ -324,4 +327,12 @@ input[type="radio"]:checked + .unit {
 
 .odin:hover {
   transform: scale(1.2);
+}
+
+/************ Media q *****/
+
+@media (max-width: 480px) {
+  .header {
+    flex-flow: wrap;
+  }
 }
