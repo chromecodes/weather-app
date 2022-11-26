@@ -11,6 +11,7 @@
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
+  width: 100%;
   background: var(--primary-bg-clr);
   color: var(--primary-clr);
   display: flex;
@@ -329,7 +330,7 @@ input[type="radio"]:checked + .unit {
   transform: scale(1.2);
 }
 
-/************ Media q *****/
+/************ Media Q *****/
 
 @media (max-width: 480px) {
   .header {
