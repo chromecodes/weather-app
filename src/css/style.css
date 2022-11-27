@@ -8,6 +8,7 @@
     rgb(0, 184, 165) 100%
   );
 }
+
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
@@ -18,6 +19,7 @@ body {
   flex-direction: column;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -25,7 +27,6 @@ body {
   padding: 30px;
   font-size: 28px;
   font-weight: 600;
-  width: 100%;
 }
 .title {
   margin-left: 10px;
@@ -333,7 +334,74 @@ input[type="radio"]:checked + .unit {
 /************ Media Q *****/
 
 @media (max-width: 480px) {
+  body {
+    width: 100%;
+  }
   .header {
+    width: 100%;
     flex-flow: wrap;
+    row-gap: 15px;
+  }
+  .conversion {
+    column-gap: 0;
+  }
+  .searchbox {
+    order: 3;
+    margin-left: 65px;
+  }
+  .main-cnt {
+    width: 100%;
+  }
+  .main {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+  }
+  .right-cntr {
+    display: flex;
+    flex-direction: column;
+  }
+  .right-cntr {
+    grid-area: right;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-auto-rows: max-content;
+    grid-template-areas:
+      "FRA FRB"
+      "SRA SRB"
+      "LRA LRB";
+
+    grid-gap: 20px;
+    justify-content: center;
+    padding-right: 0;
+  }
+  .wind-speed {
+    grid-area: FRA;
+  }
+  .humidity {
+    grid-area: FRB;
+  }
+  .visibility {
+    grid-area: SRA;
+  }
+  .cloudiness {
+    grid-area: SRB;
+  }
+  .sunrise {
+    grid-area: LRA;
+  }
+  .sunset {
+    grid-area: LRB;
+  }
+}
+
+@media (max-width: 321px) {
+  .header {
+    justify-content: center;
+    align-items: center;
+  }
+  .searchbox {
+    order: 3;
+    margin: 0;
   }
 }
