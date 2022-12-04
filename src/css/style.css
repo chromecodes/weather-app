@@ -12,7 +12,6 @@
 body {
   font-family: "Nunito", sans-serif;
   min-height: 100vh;
-  width: 100%;
   background: var(--primary-bg-clr);
   color: var(--primary-clr);
   display: flex;
@@ -75,7 +74,7 @@ body {
 }
 .conversion {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 }
 .unit {
   display: flex;
@@ -129,10 +128,11 @@ input[type="radio"]:checked + .unit {
 .main {
   display: grid;
   grid-template-columns: 25% 50% 25%;
-  grid-template-rows: 55% 45%;
+  grid-template-rows: auto;
   grid-template-areas:
     "left cent right"
     "bottom bottom bottom";
+  row-gap: 20px;
 }
 .left-cntr {
   grid-area: left;
@@ -188,7 +188,7 @@ input[type="radio"]:checked + .unit {
     "TRA TRB"
     "PRA PRB"
     "LRA LRB";
-  grid-gap: 20px;
+  grid-gap: 15px;
   justify-content: end;
   padding-right: 25px;
 }
@@ -333,12 +333,23 @@ input[type="radio"]:checked + .unit {
 
 /************ Media Q *****/
 
-@media (max-width: 480px) {
-  body {
-    width: 100%;
+@media (max-width: 780px) {
+  .main {
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "left cent right"
+      "bottom bottom bottom";
   }
+
+  .forcast-cntr {
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 480px) {
   .header {
-    width: 100%;
     flex-flow: wrap;
     row-gap: 15px;
   }
@@ -349,13 +360,14 @@ input[type="radio"]:checked + .unit {
     order: 3;
     margin-left: 65px;
   }
-  .main-cnt {
-    width: 100%;
-  }
+
   .main {
     display: flex;
     flex-direction: column;
     row-gap: 35px;
+  }
+  .left-cntr {
+    padding-right: 25px;
   }
   .right-cntr {
     display: flex;
@@ -370,7 +382,6 @@ input[type="radio"]:checked + .unit {
       "FRA FRB"
       "SRA SRB"
       "LRA LRB";
-
     grid-gap: 20px;
     justify-content: center;
     padding-right: 0;
@@ -395,7 +406,7 @@ input[type="radio"]:checked + .unit {
   }
 }
 
-@media (max-width: 321px) {
+@media (max-width: 375px) {
   .header {
     justify-content: center;
     align-items: center;
